@@ -2,5 +2,21 @@
     <string name="app_name">CacheLocator</string>
 
     <string name="hello_world">Hello world!</string>
+    <string name="action_logout">Logout</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_sign_up">SignUpActivity</string>
+    <string name="title_activity_login">LoginActivity</string>
+
+    <string name="username_hint">Enter User:</string>
+    <string name="password_hint">Enter Password:</string>
+    <string name="password_again_hint">Enter Password Again:</string>
+    <string name="signup_button">Sign Up</string>
+    <string name="login_button">Log in</string>
+    <string name="title_activity_cache_locator_application">CacheLocatorApplication</string>
+
+    <string name="login_error_message">Error logging in</string>
+    <string name="login_error_title">Oops</string>
+    <string name="signup_error_message">Error signing up</string>
+    <string name="signup_error_title">Oops</string>
+
 </resources>
