@@ -20,6 +20,7 @@ public class SignUpActivity extends ActionBarActivity {
     protected EditText usernameEditText;
     protected EditText passwordEditText;
     protected EditText passwordAgainEditText;
+    protected Button mActionButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +31,7 @@ public class SignUpActivity extends ActionBarActivity {
         passwordEditText = (EditText)findViewById(R.id.passwordField);
         passwordAgainEditText = (EditText)findViewById(R.id.passwordAgainField);
 
-        Button mActionButton = (Button)findViewById(R.id.signupButton);
+        mActionButton = (Button)findViewById(R.id.signupButton);
         mActionButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -41,8 +42,8 @@ public class SignUpActivity extends ActionBarActivity {
 
     private void signUserUp(){
         String username = usernameEditText.getText().toString().trim();
-        String password = usernameEditText.getText().toString().trim();
-        String passwordAgain = usernameEditText.getText().toString().trim();
+        String password = passwordEditText.getText().toString().trim();
+        String passwordAgain = passwordAgainEditText.getText().toString().trim();
 
         if(username.isEmpty() || password.isEmpty() || passwordAgain.isEmpty()){
             //A field is empty, display message

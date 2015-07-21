@@ -20,13 +20,15 @@ public class LoginActivity extends ActionBarActivity {
 
     protected EditText mUsername;
     protected EditText mPassword;
+    protected Button mLoginButton;
+    protected Button mSignupButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        Button mSignupButton = (Button)findViewById(R.id.signupButton);
+        mSignupButton = (Button)findViewById(R.id.signupButton);
         mSignupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -37,8 +39,7 @@ public class LoginActivity extends ActionBarActivity {
 
         mUsername = (EditText)findViewById(R.id.usernameField);
         mPassword = (EditText)findViewById(R.id.passwordField);
-
-        Button mLoginButton = (Button)findViewById(R.id.loginButton);
+        mLoginButton = (Button)findViewById(R.id.loginButton);
         mLoginButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -64,13 +65,12 @@ public class LoginActivity extends ActionBarActivity {
         else{
             //Log in process
             ParseUser.logInInBackground(username, password, new LogInCallback() {
-                @Override
-                public void done(ParseUser parseUser, ParseException e) {
-                    if(e == null){
+                public void done(ParseUser user, ParseException e) {
+                    if(user != null){
                         //The user is logged in
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK |
-                                Intent.FLAG_ACTIVITY_NEW_TASK);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);
                     }
                     else{

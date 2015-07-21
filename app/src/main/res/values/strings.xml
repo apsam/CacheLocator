@@ -19,4 +19,16 @@
     <string name="signup_error_message">Error signing up</string>
     <string name="signup_error_title">Oops</string>
 
+    <string name="post_label">Post</string>
+    <string name="title_activity_post">PostActivity</string>
+
+    <string name="latitude_label">Lat:</string>
+    <string name="longitude_label">Long:</string>
+    <string name="title_activity_maps">Map</string>
+
+    <string name="post_out_of_range">Out of range</string>
+
+
+
+
 </resources>
